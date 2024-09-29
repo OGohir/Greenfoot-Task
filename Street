@@ -1,0 +1,31 @@
+import greenfoot.*;
+
+public class Street extends World {
+
+    Actor[] band;
+
+    public Street() 
+    {
+        super(600, 400, 1);
+
+        band = new Actor[5];
+        int i = 0;
+
+        while (i < band.length) {
+            band[i] = new Person();
+            addObject(band[i], 50, (i + 1) * 50);
+            i++;
+        }
+    }
+
+    public void act()
+    {
+        int i = 0;
+        
+        while (i<band.length)
+        {
+            band[i].move(10);
+            i++;
+        }
+    }
+}
